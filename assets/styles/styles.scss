@@ -1,8 +1,28 @@
 // font-family: 'Lato', sans-serif;
 // font-family: 'Permanent Marker', cursive;
 
+/*===== colors =====*/
+
+$green_lighten_4: #c8e6c9;
+$green_lighten_3: #a5d6a7;
+$green_lighten_2: #81c784;
+$green_lighten_1: #66bb6a;
+$green: #4caf50;
+$green_darken_1: #43a047;
+$green_darken_2: #388e3c;
+$green_darken_3: #2e7d32;
+$green_darken_4: #1b5e20;
+$dark: #1f1e1d;
+
+/*===== fonts =====*/
+$font_main: 'Lato', sans-serif;
+$font_logo: 'Permanent Marker', cursive;
+$spacing: 0.1rem;
+
 /*===== main styles =====*/
 html {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -13,8 +33,10 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  color: #1f1e1d;
+  margin: 0;
+  padding: 0;
+  font-family: $font_main;
+  color: $dark;
 }
 
 .container {
@@ -31,13 +53,18 @@ a {
 
 button,
 input {
-  font-family: "Lato", sans-serif;
+  font-family: $font_main;
   border: none;
   appearance: none;
   outline: none;
 }
 
 // Header Styles
+
+.header {
+  min-height: 80px;
+  padding: 14px 0;
+}
 
 .header__wrapper {
   display: flex;
@@ -46,9 +73,10 @@ input {
 }
 
 .header__logo {
-  font-family: "Permanent Marker", cursive;
+  font-family: $font_logo;
   font-size: 36px;
   cursor: pointer;
+  color: $green_darken_3;
 }
 
 .header__navigation {
@@ -61,16 +89,21 @@ input {
 
 .header__link {
   position: relative;
+
+  & a {
+    font-weight: 300;
+    letter-spacing: $spacing;
+  }
 }
 
 .header__link::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ab7a5f;
+  background-color: $green_darken_1;
   opacity: 0;
   transition: all 0.2s linear;
 }
@@ -95,7 +128,7 @@ input {
 .header__cart,
 .header__loggin {
   padding: 5px 10px;
-  border: 1px solid #ab7a5f;
+  border: 1px solid $green_darken_2;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s linear;
@@ -103,12 +136,13 @@ input {
 
 .header__cart:hover,
 .header__loggin:hover {
-  background-color: #d1b6a8;
+  background-color: $green_lighten_4;
 }
 
 .header__cart span,
 .header__loggin span {
-  margin-right: 7px;
+  margin-right: 0.5rem;
+  letter-spacing: $spacing;
 }
 
 .header__amount {
@@ -123,6 +157,101 @@ input {
   margin: 0;
   border-radius: 50%;
   color: #fff;
-  background-color: #ab7a5f;
+  background-color: $green_darken_2;
   font-size: 12px;
+}
+
+// Intro Styles
+
+.intro {
+  min-height: calc(100vh - 100px);
+}
+
+.intro__wrapper {
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.intro__description {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro__title {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.intro__subtitle {
+  width: 100%;
+  margin-bottom: 2rem;
+  line-height: 2;
+  font-size: 1.25rem;
+}
+
+.intro__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 145px;
+  height: 48px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  background-color: $green_darken_2;
+  color: #fff;
+  transition: all 0.2s linear;
+
+  &:hover {
+    color: $dark;
+    background-color: $green_lighten_2;
+  }
+}
+
+.intro__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  & img {
+    border-radius: 5px;
+  }
+
+  & .intro__first {
+    position: absolute;
+    right: 30px;
+    bottom: 80px;
+    z-index: 5;
+    width: 75%;
+    height: 65%;
+    object-fit: cover;
+  }
+
+  & .intro__second {
+    position: absolute;
+    left: -20px;
+    bottom: 80px;
+    z-index: 10;
+    width: 55%;
+    height: 25%;
+    object-fit: cover;
+  }
+
+  & .intro__block {
+    position: absolute;
+    left: 60px;
+    bottom: 80px;
+    z-index: 2;
+    width: 15%;
+    height: 55%;
+    border-radius: 5px;
+    background-color: $green_lighten_3;
+  }
 }
