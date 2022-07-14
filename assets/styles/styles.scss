@@ -1,7 +1,7 @@
 // font-family: 'Lato', sans-serif;
 // font-family: 'Permanent Marker', cursive;
 
-/*===== colors =====*/
+//colors
 
 $green_lighten_4: #c8e6c9;
 $green_lighten_3: #a5d6a7;
@@ -14,9 +14,9 @@ $green_darken_3: #2e7d32;
 $green_darken_4: #1b5e20;
 $dark: #1f1e1d;
 
-/*===== fonts =====*/
-$font_main: 'Lato', sans-serif;
-$font_logo: 'Permanent Marker', cursive;
+//fonts
+$font_main: "Lato", sans-serif;
+$font_logo: "Permanent Marker", cursive;
 $spacing: 0.1rem;
 
 /*===== main styles =====*/
@@ -39,10 +39,21 @@ body {
   color: $dark;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 1rem;
 }
 
 a {
@@ -97,7 +108,7 @@ input {
 }
 
 .header__link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 0;
@@ -164,7 +175,7 @@ input {
 // Intro Styles
 
 .intro {
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
 }
 
 .intro__wrapper {
@@ -201,13 +212,14 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 145px;
+  width: 10rem;
   height: 48px;
   font-size: 1rem;
   border-radius: 0.25rem;
   background-color: $green_darken_2;
   color: #fff;
   transition: all 0.2s linear;
+  text-transform: uppercase;
 
   &:hover {
     color: $dark;
@@ -253,5 +265,290 @@ input {
     height: 55%;
     border-radius: 5px;
     background-color: $green_lighten_3;
+  }
+}
+
+// Latest Styles
+
+.latest {
+  padding: 5rem 0;
+  background-color: $green_lighten_4;
+}
+
+.latest__title {
+  position: relative;
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: $spacing;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 0.25rem;
+    background-color: $green_darken_3;
+  }
+}
+
+.card__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: 265px;
+  gap: 2.5rem;
+  margin: 6rem auto 4rem;
+}
+
+.card__img {
+  height: 225px;
+  position: relative;
+  background-color: $green_darken_1;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.show__more {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $green_darken_1;
+  cursor: pointer;
+}
+
+.card__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card__title {
+  color: $green_darken_4;
+}
+
+.card__price {
+  color: $green_darken_1;
+}
+
+.latest__btn {
+  margin: 0 auto;
+}
+
+// About Styles
+
+.about {
+  padding: 5rem 0;
+  background-color: $green_lighten_3;
+}
+
+.about__title {
+  margin-bottom: 2rem;
+  line-height: 1;
+  font-size: 2rem;
+  color: $green_darken_4;
+  font-weight: 700;
+}
+
+.about__subtitle {
+  line-height: 1.8;
+  color: $green_darken_4;
+  font-size: 1rem;
+}
+
+.about__wrapper {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  margin-top: 4rem;
+}
+
+.about__item {
+  padding: 2.5rem 2rem;
+  border-radius: 0.25rem;
+  background-color: $green_lighten_2;
+}
+
+.about__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  & span {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $green_lighten_3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.about__header {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-transform: capitalize;
+  text-align: center;
+  color: $green_darken_4;
+  font-weight: 700;
+}
+
+.about__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: $green_darken_4;
+}
+
+// Join Styles
+
+.join {
+  padding: 5rem 0;
+}
+
+.join__title {
+  margin-bottom: 2rem;
+  line-height: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.join__subtitle {
+  line-height: 2;
+  max-width: 45rem;
+  margin-bottom: 1.25rem;
+}
+
+.join__form {
+  max-width: 500px;
+  height: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-radius: 5px;
+  // border: 2px solid $green_darken_4;
+
+  & input {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.join__email {
+  border: 2px solid $green_darken_4;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  &:focus {
+    border: 3px solid $green_darken_4;
+  }
+}
+
+.join__submit {
+  border: 2px solid $green_darken_4;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  background-color: $green_darken_2;
+  color: #fff;
+  transition: all 0.2s linear;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark;
+    background-color: $green_lighten_2;
+  }
+}
+
+// Footer Styles
+
+.footer {
+  background-color: $green_darken_4;
+  height: 80px;
+}
+
+.footer__wrapper {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__logo {
+  width: 4rem;
+
+  & a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  & svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footer__info {
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: $spacing;
+
+  & span {
+    color: $green_lighten_1;
+  }
+}
+
+.footer__repo {
+  width: 2rem;
+
+  & a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  & svg {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
