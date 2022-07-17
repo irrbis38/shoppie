@@ -324,7 +324,7 @@ select {
 // Main Styles
 
 .main {
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 // Intro Styles
@@ -1808,19 +1808,6 @@ select {
   color: $green_darken_2;
 }
 
-// .favorites__quantity {
-//   width: 100px;
-//   display: grid;
-//   width: 140px;
-//   place-items: center;
-//   grid-template-columns: repeat(3, 1fr);
-
-//   & span {
-//     font-size: 2rem;
-//     font-weight: 700;
-//   }
-// }
-
 .favorites__delete {
   width: 2rem;
   height: 2rem;
@@ -1930,5 +1917,100 @@ select {
 
   .favorites__continue {
     margin-bottom: 3rem;
+  }
+}
+
+/////////////////////////////////////////////////
+// LOGIN STYLES
+/////////////////////////////////////////////////
+
+.auth {
+  padding: 5rem 15px;
+  max-width: 930px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.login .auth__form:nth-child(2) {
+  margin-bottom: 1rem;
+}
+
+.login,
+.signup {
+  padding: 2rem;
+  border-radius: 5px;
+  border: 1px solid $green_darken_1;
+}
+
+.auth label,
+.auth input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.auth input::placeholder {
+  letter-spacing: $spacing;
+}
+
+.auth input {
+  height: 36px;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid $green_darken_2;
+}
+
+.auth__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 36px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  background-color: $green_darken_2;
+  color: #fff;
+  transition: all 0.2s linear;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark;
+    background-color: $green_lighten_2;
+  }
+}
+
+.auth__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+@media (max-width: 992px) {
+  .auth {
+    display: block;
+    max-width: 500px;
+  }
+
+  .login {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth {
+    padding: 3rem 10px;
+  }
+  .auth__btn {
+    width: 100%;
+    max-width: 266px;
+  }
+
+  .login,
+  .signup {
+    padding: 1rem;
   }
 }
