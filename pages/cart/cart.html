@@ -111,19 +111,62 @@
             <p class="cart__column">Price</p>
             <p class="cart__column">Quantity</p>
             <p class="cart__column">Subtotal</p>
+            <p class="cart__column"></p>
           </div>
-        </div>
-        <div class="cart__line"></div>
-        <div class="cart__main">
-          <div class="cart__item">cart item</div>
-        </div>
-        <div class="cart__line"></div>
-        <div class="cart__footer">
+
+          <div class="cart__line"></div>
+          <div class="cart__main">
+            <div class="cart__item">
+              <div class="cart__about">
+                <div class="cart__img">
+                  <img
+                    src="https://images.unsplash.com/photo-1515681412668-16d6d4a54ab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+                    alt="rasberry"
+                  />
+                </div>
+                <div class="cart__block">
+                  <h3 class="cart__name">Rasberry</h3>
+                  <div class="cart__color">Color: <span></span></div>
+                  <p class="price__small">$30.99</p>
+                </div>
+              </div>
+              <p class="cart__price">$30.99</p>
+              <div class="cart__quantity">
+                <button class="cart__dec">&mdash;</button>
+                <span>1</span>
+                <button class="cart__inc">+</button>
+              </div>
+              <p class="cart__sub">$30.99</p>
+              <button class="cart__delete">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+          </div>
+          <div class="cart__line"></div>
           <div class="cart__nav">
             <a href="#!" class="cart__continue">Continue Shopping</a>
-            <button class="cart__clear">Clear Cart</button>
+            <button class="cart__clear">Clear Shopping Cart</button>
           </div>
-          <div class="cart__total"></div>
+          <div class="cart__footer">
+            <div class="cart__info">
+              <div class="cart__order">
+                <div class="cart__subtotal">
+                  <span>Subtotal :</span>
+                  <span>$30.99</span>
+                </div>
+                <div class="cart__fee">
+                  <span>Shipping Fee :</span>
+                  <span>$5.34</span>
+                </div>
+                <div class="cart__line"></div>
+                <div class="cart__total">
+                  <span>Order Total :</span>
+                  <span>$36.33</span>
+                </div>
+              </div>
+              <a class="cart__login">LOGIN</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
